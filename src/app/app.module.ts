@@ -41,7 +41,7 @@ import { EditeducacionComponent } from './components/educacion/edit-educacion.co
     NewExperienciaComponent,
     EditExperienciaComponent,
     NeweducacionComponent,
-    EditeducacionComponent,
+    EditeducacionComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +49,6 @@ import { EditeducacionComponent } from './components/educacion/edit-educacion.co
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule
-    
   ],
   providers: [
     InterceptorProvider
