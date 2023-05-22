@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = "https://backendfm.onrender.com/auth/"
+  authURL = 'https://backendfm.onrender.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
