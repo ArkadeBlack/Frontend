@@ -1,15 +1,19 @@
 <div class="row">
 <h1>Skills</h1>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
+<div class="col-lg-2">
+    <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
+</div>
+
+    <div class="text-center col-sm-6 col-md-3 col-lg-3 circulo" *ngFor="let skill of skill">
         <circle-progress
-            [title]="'HTML'"
+            [title]="(skill.nombre)"
             [imageSrc]="'../assets/html.png'"
             [imageHeight]="50"
             [imageWidth]="50"
             [showImage]="true"
             [showUnits]="false"
             [showSubtitle]="false"
-            [percent]="80"
+            [percent]="(skill.porcentaje)"
             [radius]="80"
             [outerStrokeWidth]="15"
             [innerStrokeWidth]="2"
@@ -18,138 +22,17 @@
             [animation]="true"
             [animationDuration]="900"
         ></circle-progress>
+        
+    <div>
+        <td *ngIf="isLogged">
+            <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+                <i class="bi bi-pencil-fill"></i>editar</button>
+        </td>
+        <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(skill.id)">
+                <i class="bi bi-trash-fill"></i>borrar</button>
+        </td>
     </div>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
-        <circle-progress
-            [title]="'CSS'"
-            [imageSrc]="'../assets/css.png'"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [percent]="70"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#333'"
-            [innerStrokeColor]="'#333'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
-        <circle-progress
-            [title]="'JS'"
-            [imageSrc]="'../assets/js.png'"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [percent]="30"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#333'"
-            [innerStrokeColor]="'#333'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
-        <circle-progress
-            [title]="'PYTHON'"
-            [imageSrc]="'../assets/python.png'"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [percent]="50"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#333'"
-            [innerStrokeColor]="'#333'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
-        <circle-progress
-            [title]="'RUBY'"
-            [imageSrc]="'../assets/rubi.png'"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [percent]="40"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#333'"
-            [innerStrokeColor]="'#333'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
-        <circle-progress
-            [title]="'ANGULAR'"
-            [imageSrc]="'../assets/angular.png'"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [percent]="65"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#333'"
-            [innerStrokeColor]="'#333'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
-        <circle-progress
-            [title]="'GITHUB'"
-            [imageSrc]="'../assets/git-hub.png'"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [percent]="50"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#333'"
-            [innerStrokeColor]="'#333'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
-    <div class="text-center col-sm-6 col-md-3 col-lg-3">
-        <circle-progress
-            [title]="'MYSQL'"
-            [imageSrc]="'../assets/mysql.png'"
-            [imageHeight]="50"
-            [imageWidth]="50"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [percent]="40"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#333'"
-            [innerStrokeColor]="'#333'"
-            [animation]="true"
-            [animationDuration]="900"
-        ></circle-progress>
-    </div>
+
+</div>
 </div>
